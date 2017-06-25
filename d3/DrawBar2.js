@@ -69,7 +69,7 @@ function drawBar2() {
                 tooltip
                 .style("position", "absolute")
                 .style("display", "inline-block")
-                .style('top', 550 + "px")
+                .style('top', 400 + "px")
                 .style('left', (width)/7 + "px")
                 //Tooltip is same colour as the bar
                 .style('color', d.Hexidecimal)
