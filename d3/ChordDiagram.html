@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Genre Chord</title>
+</head>
+<style>
+    .ribbons {
+        fill-opacity: 0.6;
+        stroke-opacity: 0.4;
+    }
+
+    #ChordChartDiv svg {
+        padding-top: 50px;
+    }
+
+    #ChordChartDiv div {
+    }
+
+    #BarChartDiv svg {
+        padding-left: 100px;
+        padding-top: 30px;
+    }
+
+    #BarChartDiv2 svg {
+        padding-left: 100px;
+        padding-top: 30px;
+    }
+
+    #AreaChartDiv svg {
+        padding-right: 70px;
+
+        padding-bottom: 40px;
+    }
+
+    body {
+        font-family: helvetica, arial;
+        background: #333333;
+        color: white;
+    }
+
+    .genrename {
+        color: white;
+        font-size: 10px;
+    }
+
+    .toolTip {
+        position: absolute;
+        display: none;
+        height: auto;
+        padding: 14px;
+        text-align: left;
+    }
+
+    .toolTip2 {
+        position: absolute;
+        display: none;
+    }
+
+    .domain{
+      stroke: white;
+    }
+
+    .y_axis.axis line {
+      stroke: white;
+    }
+
+    .tick text {
+      color: white;
+      fill: white;
+    }
+
+    .tick line {
+      stroke: white;
+      opacity: 1;
+    }
+
+    .Title {
+      font-size: 9em;
+      text-align: center;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    @media screen and (max-width: 1100px){
+    #Text1 {
+      font-size: 1.5em;
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+  }
+
+    @media screen and (min-width: 1099px) {
+      #Text1 {
+        font-size: 1.5em;
+        margin-left: 250px;
+        margin-right: 250px;
+      }
+}
+</style>
+
+<body>
+    <script src="d3.js"></script>
+    <script src="DrawChord.js"></script>
+    <script src="DrawBar.js"></script>
+    <script src="DrawBar2.js"></script>
+    <script src="DrawArea.js"></script>
+
+    <p class="Title"><b>3651 Films</b></p>
+
+    <div id="Text1">
+    <p class="Main">What can they tell us about genre? Taking a dataset from <a href="https://www.kaggle.com/deepmatrix/imdb-5000-movie-dataset">Kaggle</a> scaped from IMDb, whittled down to english language films with full data entries left 3651 films. Let's see what they have to say about genre, make sure to hover over the data to let it speak.</p>
+    </div>
+
+    <div id="BarChartDiv2"></div>
+
+    <div id="Text1">
+    <p class="Main">This bar not only shows the interesting split of genres through films, but also shows the sample size for each genre. The data for drama is likely to be more accurate in the following graphs than western because of the bigger sample size.</p>
+    </div>
+
+    <div id="BarChartDiv"></div>
+
+    <div id="Text1">
+    <p class="Main">Through animation and family both seem to be good ways to return a good ticket gross from your budget investment, horror it seems is one of the best genres to invest in. On ticket sales alone, the data suggests it provides a similiar return once budget has been accounted for. The data here is perhaps misleading though. The film industry doesn't make all its money from ticket sales alone, particularly with family and animated films. With DVD sales, and sales of merchandise, the actual profit made goes beyond the gross ticket sales shown in the graph. Animations and family films are likely to make a lot more than horror, even after budget is accounted for.</p>
+    </div>
+
+    <div id="AreaChartDiv"></div>
+
+    <div id="Text1">
+    <p class="Main">This chart recognises a number of different trends in the film industry between 1980 and 2016. Notably the rise of animated films, with computer animated films meaning that they are becoming steadily cheaper to produce and allowing the rise of other animated film industries other than Disney to become big players in the industry, for example the rise of DreamWorks in 1997 stemming from the success of Amblimation's films in the early 90s.<br><br> One of the other interesting trends is the boom of horror and sci-fi films in the 80s. The increasing technology allowed for better special effects, aiding both genres. The Sci-Fi genre recieved E.T. and two more additions to the Star Wars franchise, sparking the imagination for Sci-Fi films. While the Horror genre continued growing strong from it's boom in the 70s, recieving sequels from many films like Haloween and new entries to the genre such as The Shining and Gremlins. </p>
+    </div>
+
+    <div id="ChordChartDiv"></div>
+
+    <div id="Text1">
+    <p class="Main">The chord diagram above shows some interesting trend when hovering to see how many films link each genre. While Romance is linked to all of the genres by some degree, its links to comedy and drama are much greater than to any of the other genres. As seen by the size of the arcs, Drama and Comedy have the greatest links to other genres. Drama and Comedy are most likely to be sub-genres to other genres, as they dictate the tone of the film and not just the setting, like fantasy and war does to some extent.
+    </p>
+    </div>
+
+    <script>
+
+    drawChord()
+
+    drawBar()
+
+    drawBar2()
+
+    drawArea()
+
+    </script>
+</body>
+
+</html>
