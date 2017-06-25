@@ -30,7 +30,7 @@ function drawBar2() {
         .append('div')
         .attr('class', 'toolTip2');
 
-    d3.csv("/GenreMostPopular.csv", function(data) {
+    d3.csv("FilmVisualisation/GenreMostPopular.csv", function(data) {
         data.forEach(function(d) {
             d.Count = +d.Count;
         });

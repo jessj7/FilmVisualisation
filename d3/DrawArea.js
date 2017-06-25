@@ -55,7 +55,7 @@ function drawArea() {
     var g = svg.append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    d3.csv("d3/TotalByYearProportion1980Up.csv", type, function(error, data) {
+    d3.csv("FilmVisualisation/TotalByYearProportion1980Up.csv", type, function(error, data) {
         if (error) throw error;
 
         //The keys are used to identify which genre is being accessed.
