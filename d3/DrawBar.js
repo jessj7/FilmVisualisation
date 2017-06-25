@@ -30,7 +30,7 @@ function drawBar() {
         .append('div')
         .attr('class', 'toolTip2');
 
-    d3.csv("FilmVisualisation/MedianGrossGenre.csv", function(data) {
+    d3.csv("MedianGrossGenre.csv", function(data) {
         data.forEach(function(d) {
             d.MedianGross = +d.MedianGross;
         });
