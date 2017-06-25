@@ -152,7 +152,7 @@ function drawLine() {
         .append('div')
         .attr('class', 'tooltip');
 
-    d3.csv("TotalByYearProportion1980Up.csv", function(error, data) {
+    d3.csv("/FilmVisualisation/TotalByYearProportion1980Up.csv", function(error, data) {
         if (error) throw error;
         data.forEach(function(d) {
             d.Year = new Date(d.Year);
